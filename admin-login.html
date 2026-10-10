@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addis Eats | Admin Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-login-page">
+  <main class="login-wrap">
+    <div class="login-card">
+      <a class="logo" href="index.html">🍴 Addis <span>Eats</span></a>
+      <p class="eyebrow">ADMIN AREA</p>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to manage dishes and orders.</p>
+      <div id="loginError" class="alert error hidden"></div>
+      <form id="loginForm">
+        <label>Username
+          <input id="username" type="text" required autocomplete="username" placeholder="admin">
+        </label>
+        <label>Password
+          <input id="password" type="password" required autocomplete="current-password" placeholder="admin123">
+        </label>
+        <button class="btn btn-primary btn-full" type="submit">Sign in</button>
+      </form>
+      <p class="login-hint">Demo credentials: <strong>admin</strong> / <strong>admin123</strong></p>
+      <a href="index.html" class="back-link">← Back to customer site</a>
+    </div>
+  </main>
+  <script src="admin-login.js"></script>
+</body>
+</html>
