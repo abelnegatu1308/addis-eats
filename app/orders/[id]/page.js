@@ -25,7 +25,7 @@ export default async function OrderPage({ params }) {
   return (
     <main className="mx-auto max-w-5xl px-6 py-10">
       <div className="mb-8">
-        <p className="text-sm font-medium uppercase tracking-wider text-gray-500">
+        <p className="text-sm font-medium uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
           Addis Eats
         </p>
 

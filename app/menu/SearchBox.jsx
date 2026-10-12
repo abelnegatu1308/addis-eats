@@ -7,17 +7,22 @@ export default function SearchBox({ value, onChange, isSearching, error }) {
         onChange={(event) => onChange(event.target.value)}
         aria-label="Search dishes"
         placeholder="Search dishes..."
-        className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+        className="w-full rounded-xl border px-4 py-3 outline-none transition"
+        style={{
+          background: "var(--input-bg)",
+          borderColor: "var(--input-border)",
+          color: "var(--text)",
+        }}
       />
 
       {isSearching && (
-        <p className="mt-2 text-sm text-gray-500" role="status">
+        <p className="mt-2 text-sm" role="status" style={{ color: "var(--text-muted)" }}>
           Searching...
         </p>
       )}
 
       {error && (
-        <p className="mt-2 text-sm text-red-600" role="alert">
+        <p className="mt-2 text-sm" role="alert" style={{ color: "var(--error)" }}>
           Failed to load search results.
         </p>
       )}

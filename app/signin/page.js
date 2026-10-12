@@ -25,12 +25,12 @@ export default async function SignInPage({ searchParams }) {
       <div className="content-card max-w-xl">
         <h1>Welcome back</h1>
 
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2" style={{ color: "var(--text-muted)" }}>
           Sign in to continue to your Addis Eats account.
         </p>
 
         {error && (
-          <div className="mt-6 rounded-lg border border-red-200 bg-red-50 p-4 text-red-700">
+          <div className="mt-6 rounded-lg border p-4" style={{ borderColor: "var(--error-border)", background: "var(--error-bg)", color: "var(--error)" }}>
             {error}
           </div>
         )}
@@ -57,6 +57,7 @@ export default async function SignInPage({ searchParams }) {
               required
               autoComplete="email"
               className="w-full rounded-lg border px-4 py-3"
+              style={{ background: "var(--input-bg)", borderColor: "var(--input-border)", color: "var(--text)" }}
               placeholder="you@example.com"
             />
           </div>
@@ -76,6 +77,7 @@ export default async function SignInPage({ searchParams }) {
               required
               autoComplete="current-password"
               className="w-full rounded-lg border px-4 py-3"
+              style={{ background: "var(--input-bg)", borderColor: "var(--input-border)", color: "var(--text)" }}
               placeholder="••••••••"
             />
           </div>
@@ -90,16 +92,17 @@ export default async function SignInPage({ searchParams }) {
 
         <Link
           href="/admin/login"
-          className="mt-4 inline-flex min-h-12 w-full items-center justify-center rounded-lg border border-gray-300 px-4 py-3 font-medium text-gray-800 transition hover:border-green-800 hover:text-green-900"
+          className="mt-4 inline-flex min-h-12 w-full items-center justify-center rounded-lg border px-4 py-3 font-medium transition"
+          style={{ borderColor: "var(--border-strong)", color: "var(--text)" }}
         >
           Login as admin
         </Link>
 
         {process.env.NODE_ENV !== "production" && (
-          <div className="mt-8 rounded-lg bg-gray-50 p-4 text-sm">
+          <div className="mt-8 rounded-lg border p-4 text-sm" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
             <p className="font-semibold">Local demo customer</p>
             <p>abel@addiseats.local / abel123</p>
-            <hr className="my-4" />
+            <hr className="my-4" style={{ borderColor: "var(--border)" }} />
             <p className="font-semibold">Local demo staff</p>
             <p>staff@addiseats.local / staff123</p>
           </div>
@@ -108,6 +111,7 @@ export default async function SignInPage({ searchParams }) {
         <Link
           href="/menu"
           className="mt-6 inline-block text-sm underline"
+          style={{ color: "var(--text-muted)" }}
         >
           ← Back to menu
         </Link>

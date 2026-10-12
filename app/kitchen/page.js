@@ -29,16 +29,16 @@ export default async function KitchenPage() {
       <div className="content-card">
         <h1>Kitchen</h1>
 
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2" style={{ color: "var(--text-muted)" }}>
           Welcome, {session.name}.
         </p>
 
-        <div className="mt-8 rounded-xl border bg-gray-50 p-6">
+        <div className="mt-8 rounded-xl border p-6" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
           <h2 className="text-xl font-semibold">
             Kitchen Dashboard
           </h2>
 
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2" style={{ color: "var(--text-muted)" }}>
             This area is restricted to Addis Eats staff.
           </p>
         </div>

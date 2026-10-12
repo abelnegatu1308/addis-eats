@@ -35,12 +35,12 @@ export default async function OrdersPage() {
       <div className="content-card">
         <h1>Your orders</h1>
 
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2" style={{ color: "var(--text-muted)" }}>
           Orders belonging to {session.email}
         </p>
 
         {orders.length === 0 ? (
-          <div className="mt-8 rounded-lg bg-gray-50 p-6">
+          <div className="mt-8 rounded-lg border p-6" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
             <p>You have not placed any orders yet.</p>
           </div>
         ) : (

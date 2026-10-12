@@ -42,11 +42,11 @@ export default function DishList({ dishes = [] }) {
 
   if (error && currentDishes.length === 0) {
     return (
-      <div className="rounded-xl border border-red-200 bg-red-50 p-6">
-        <h2 className="text-lg font-semibold text-red-700">
+      <div className="rounded-xl border p-6" style={{ borderColor: "var(--error-border)", background: "var(--error-bg)" }}>
+        <h2 className="text-lg font-semibold" style={{ color: "var(--error)" }}>
           Unable to load dishes
         </h2>
-        <p className="mt-2 text-sm text-red-600">Please try again later.</p>
+        <p className="mt-2 text-sm" style={{ color: "var(--error)" }}>Please try again later.</p>
       </div>
     );
   }
@@ -63,9 +63,9 @@ export default function DishList({ dishes = [] }) {
       />
 
       {isLoading && currentDishes.length === 0 ? (
-        <div className="py-10 text-center text-gray-500">Loading dishes...</div>
+        <div className="py-10 text-center" style={{ color: "var(--text-muted)" }}>Loading dishes...</div>
       ) : currentDishes.length === 0 ? (
-        <p className="py-10 text-center text-gray-500">
+        <p className="py-10 text-center" style={{ color: "var(--text-muted)" }}>
           No dishes match your search.
         </p>
       ) : (
@@ -118,7 +118,7 @@ export default function DishList({ dishes = [] }) {
       )}
 
       {isValidating && !isWaitingForDebounce && (
-        <p className="mt-4 text-sm text-gray-500" role="status">
+        <p className="mt-4 text-sm" role="status" style={{ color: "var(--text-muted)" }}>
           Updating menu...
         </p>
       )}

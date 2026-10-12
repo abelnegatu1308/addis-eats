@@ -9,10 +9,10 @@ export default function FavoritesList() {
 
   if (dishes.length === 0) {
     return (
-      <div className="mt-8 rounded-xl border bg-gray-50 p-8 text-center">
+      <div className="mt-8 rounded-xl border p-8 text-center" style={{ borderColor: "var(--border)", background: "var(--surface-2)" }}>
         <div className="text-4xl">♡</div>
         <h2 className="mt-4 text-xl font-semibold">No favourites yet</h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2" style={{ color: "var(--text-muted)" }}>
           Explore the menu and save dishes you love.
         </p>
         <Link href="/menu" className="button button-primary mt-6 inline-block">

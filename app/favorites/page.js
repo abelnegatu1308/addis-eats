@@ -23,7 +23,7 @@ export default async function FavouritesPage() {
 
       <div>
         <h1 className="page-title">My Favourites</h1>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2" style={{ color: "var(--text-muted)" }}>
           Your favourite dishes will appear here.
         </p>
         <FavoritesList />

@@ -48,7 +48,7 @@ export default function OrderStatusControl({ orderId, status }) {
           {isPending ? "Updating..." : `Mark ${next}`}
         </button>
       )}
-      {message && <p className="mt-2 text-sm text-red-600" role="alert">{message}</p>}
+      {message && <p className="mt-2 text-sm" role="alert" style={{ color: "var(--error)" }}>{message}</p>}
     </div>
   );
 }

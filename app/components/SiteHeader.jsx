@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CartCount } from "../providers";
 import { getSession } from "@/lib/session";
 import SignOutButton from "./SignOutButton";
+import ThemeToggle from "./ThemeToggle";
 
 export default async function SiteHeader() {
   const session = await getSession();
@@ -27,6 +28,8 @@ export default async function SiteHeader() {
           className="site-nav"
           aria-label="Main navigation"
         >
+          <ThemeToggle />
+
           <Link href="/menu">Menu</Link>
 
           {session && (

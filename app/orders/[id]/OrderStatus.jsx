@@ -25,12 +25,12 @@ export default function OrderStatus({
 
   if (error) {
     return (
-      <div className="rounded-2xl border border-red-200 bg-red-50 p-6">
-        <h2 className="text-lg font-semibold text-red-700">
+      <div className="rounded-2xl border p-6" style={{ borderColor: "var(--error-border)", background: "var(--error-bg)" }}>
+        <h2 className="text-lg font-semibold" style={{ color: "var(--error)" }}>
           Unable to load order
         </h2>
 
-        <p className="mt-2 text-sm text-red-600">
+        <p className="mt-2 text-sm" style={{ color: "var(--error)" }}>
           Please try again later.
         </p>
       </div>
@@ -43,10 +43,10 @@ export default function OrderStatus({
   }
 
   return (
-    <section className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+    <section className="rounded-2xl border p-6 shadow-sm" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
             Order Status
           </p>
 
@@ -56,7 +56,7 @@ export default function OrderStatus({
         </div>
 
         {isValidating && (
-          <span className="text-xs text-gray-500">
+          <span className="text-xs" style={{ color: "var(--text-muted)" }}>
             Updating...
           </span>
         )}
@@ -64,7 +64,7 @@ export default function OrderStatus({
 
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <div>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
             Order ID
           </p>
 
@@ -75,7 +75,7 @@ export default function OrderStatus({
 
         {order.total !== undefined && (
           <div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm" style={{ color: "var(--text-muted)" }}>
               Total
             </p>
 
@@ -85,7 +85,7 @@ export default function OrderStatus({
       </div>
       {order.status === "pending" && (
         <div className="mt-6">
-          <p className="mb-3 text-sm text-gray-600">
+          <p className="mb-3 text-sm" style={{ color: "var(--text-muted)" }}>
             You can cancel this order while it is still pending.
           </p>
           <CancelOrderButton orderId={orderId} />

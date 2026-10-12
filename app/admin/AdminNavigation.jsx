@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { logoutAction } from "../actions/auth";
+import ThemeToggle from "../components/ThemeToggle";
 
 const links = [
   { href: "/admin", label: "Overview", exact: true },
@@ -57,6 +58,10 @@ export default function AdminNavigation() {
           })}
         </nav>
         <div className="admin-sidebar-footer">
+          <div className="admin-theme-row">
+            <span className="admin-theme-label">Appearance</span>
+            <ThemeToggle className="admin-theme-toggle" />
+          </div>
           <Link href="/menu" className="admin-nav-link">
             <span className="admin-nav-indicator" aria-hidden="true" />
             Customer menu ↗
