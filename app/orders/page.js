@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getSession } from "@/lib/session";
 import { getOrdersForOwner } from "@/lib/orders";
 import CancelOrderButton from "./CancelOrderButton";
+import ExportOrdersCsv from "./ExportOrdersCsv";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +46,10 @@ export default async function OrdersPage() {
           </div>
         ) : (
           <div className="mt-8 space-y-4">
+            <div className="flex justify-end">
+              <ExportOrdersCsv orders={orders} />
+            </div>
+
             {orders.map((order) => (
               <article
                 key={order.id}
@@ -71,9 +76,16 @@ export default async function OrdersPage() {
                 <p className="mt-4 font-semibold">
                   Total: {order.total} ETB
                 </p>
-                <Link className="mt-4 inline-block underline" href={`/orders/${order.id}`}>
-                  Track this order
-                </Link>
+
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <Link className="underline" href={`/orders/${order.id}`}>
+                    View order
+                  </Link>
+                  <Link className="underline" href={`/track/${order.id}`}>
+                    Track delivery
+                  </Link>
+                </div>
+
                 {order.status === "pending" && (
                   <CancelOrderButton orderId={order.id} />
                 )}

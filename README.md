@@ -91,6 +91,13 @@ structured data, and sitemap/robots routes use the current dish catalog.
 Vercel supplies the production origin; on other hosts set `NEXT_PUBLIC_APP_URL`
 to the public origin so canonical and social URLs are absolute.
 
+## Order tracking and exports
+
+- `GET /track/[id]` shows the authenticated customer’s delivery page with a Leaflet map, tracking timeline, delivery details, and a live status panel.
+- Delivery maps use the stored area as a stable geo anchor because the current schema records the delivery area, not a live courier GPS feed; no fake moving courier positions are generated.
+- `GET /api/orders/[id]/stream` streams the current `pending`, `preparing`, `delivering`, `delivered`, and `cancelled` order states back to the customer over SSE. It uses polling because the project does not currently have a persistent shared event bus, keeping it compatible with Vercel serverless deployments.
+- The orders history page exposes an export button that downloads a CSV with safe quoting for customer orders and item names.
+
 ## Order API
 
 - `GET /api/orders?id=...` requires a signed-in session and returns only an order owned by that account.

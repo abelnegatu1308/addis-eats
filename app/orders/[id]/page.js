@@ -38,6 +38,12 @@ export default async function OrderPage({ params }) {
         orderId={id}
         fallbackData={order}
       />
+
+      <div className="mt-6">
+        <a href={`/track/${id}`} className="inline-flex items-center rounded-full border px-4 py-2 text-sm font-medium" style={{ borderColor: "var(--border)", background: "var(--surface)", color: "var(--text)" }}>
+          Track delivery
+        </a>
+      </div>
     </main>
   );
 }
