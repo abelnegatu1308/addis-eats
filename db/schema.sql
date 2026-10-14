@@ -18,6 +18,23 @@ CREATE INDEX IF NOT EXISTS addis_eats_orders_owner_created_idx
 CREATE INDEX IF NOT EXISTS addis_eats_orders_created_idx
   ON addis_eats_orders (created_at DESC);
 
+CREATE TABLE IF NOT EXISTS addis_eats_users (
+  id uuid PRIMARY KEY,
+  name text NOT NULL,
+  email text NOT NULL,
+  password_hash text NOT NULL,
+  role text NOT NULL CHECK (role IN ('customer', 'staff')),
+  active boolean NOT NULL DEFAULT true,
+  created_at timestamptz NOT NULL DEFAULT now(),
+  updated_at timestamptz NOT NULL DEFAULT now()
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS addis_eats_users_email_unique_idx
+  ON addis_eats_users (lower(trim(email)));
+
+CREATE INDEX IF NOT EXISTS addis_eats_users_role_active_idx
+  ON addis_eats_users (role, active, created_at DESC);
+
 CREATE TABLE IF NOT EXISTS addis_eats_dishes (
   id text PRIMARY KEY CHECK (id ~ '^[a-z0-9]+(-[a-z0-9]+)*$'),
   name text NOT NULL,

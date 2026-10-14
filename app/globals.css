@@ -1902,6 +1902,149 @@ em {
 .admin-text-link:hover {
   text-decoration: underline;
 }
+.admin-success-banner,
+.admin-error-banner {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.admin-success-banner {
+  border: 1px solid var(--adm-accent-soft-border);
+  background: var(--adm-accent-soft);
+  color: var(--adm-accent);
+}
+.admin-error-banner {
+  border: 1px solid var(--adm-red-soft-border);
+  background: var(--adm-red-soft);
+  color: var(--adm-red);
+}
+.admin-user-panel {
+  padding: 0;
+}
+.admin-user-toolbar {
+  padding: 22px 22px 0;
+}
+.admin-user-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(160px, 0.8fr)) auto;
+  gap: 12px;
+  padding: 18px 22px 22px;
+}
+.admin-user-filters label {
+  display: grid;
+  gap: 7px;
+  color: var(--adm-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+.admin-user-filters input,
+.admin-user-filters select {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 11px;
+  border: 1px solid var(--adm-border);
+  border-radius: 6px;
+  background: var(--adm-surface);
+  color: var(--adm-heading);
+  font: 12px var(--font-dm-sans), sans-serif;
+}
+.admin-user-filters input:focus,
+.admin-user-filters select:focus {
+  outline: 2px solid var(--adm-accent);
+  outline-offset: 1px;
+}
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font: 500 9px var(--font-dm-mono), monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.admin-badge-role {
+  background: var(--adm-blue-soft);
+  color: var(--adm-blue);
+}
+.admin-badge-success {
+  background: var(--adm-accent-soft);
+  color: var(--adm-accent);
+}
+.admin-badge-muted {
+  background: var(--adm-surface-2);
+  color: var(--adm-text-muted);
+}
+.admin-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.admin-ghost-button {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--adm-border);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--adm-heading);
+  cursor: pointer;
+  font: 500 10px var(--font-dm-mono), monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.admin-ghost-button:hover {
+  border-color: var(--adm-accent);
+  color: var(--adm-accent);
+}
+.admin-user-form {
+  display: grid;
+  gap: 20px;
+}
+.admin-user-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+.admin-user-form-grid label {
+  display: grid;
+  gap: 7px;
+  color: var(--adm-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+.admin-user-form-grid input,
+.admin-user-form-grid select {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 11px;
+  border: 1px solid var(--adm-border);
+  border-radius: 6px;
+  background: var(--adm-surface);
+  color: var(--adm-heading);
+  font: 12px var(--font-dm-sans), sans-serif;
+}
+.admin-user-form-grid input:focus,
+.admin-user-form-grid select:focus {
+  outline: 2px solid var(--adm-accent);
+  outline-offset: 1px;
+}
+.admin-user-form-grid .admin-form-full {
+  grid-column: 1 / -1;
+}
+.admin-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--adm-heading);
+  font-size: 12px;
+}
+.admin-toggle-row input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--adm-accent);
+}
 .admin-table-scroll {
   overflow-x: auto;
 }
