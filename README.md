@@ -69,11 +69,13 @@ customer cancellation button is shown for pending orders only; the server
 enforces the same ownership and status restriction. No customer/rider
 directory, coupon, notification, inventory, or settings page is exposed.
 
-The existing account system uses a signed HttpOnly session cookie and checks
-the staff role on the server. It currently uses configured shared credentials
-and has no persistent administrator/staff directory, password reset, granular
-roles, or distributed login rate limiter. For production, use a strong unique
-staff password and configure rate limiting at the hosting/edge layer before
+The account system uses a signed HttpOnly session cookie and checks the staff
+role on the server. Staff can manage database-backed customer and staff
+accounts at `/admin/users`; the account table is created by `npm run db:migrate`.
+Configured customer and staff credentials remain available alongside
+admin-created accounts. Password reset, granular roles, and distributed login
+rate limiting are not currently provided. For production, use strong unique
+credentials and configure rate limiting at the hosting/edge layer before
 exposing the login publicly.
 
 ## Deployment status
